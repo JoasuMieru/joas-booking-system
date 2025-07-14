@@ -88,7 +88,8 @@
 .calendar-day:disabled,
 .calendar-day.disabled,
 .calendar-day.cursor-not-allowed {
-    @apply bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed;
+    @apply bg-gray-100 text-gray-400 border-gray-200;
+    cursor: not-allowed;
 }
 .calendar-day:not(:disabled):hover {
     @apply bg-blue-50 border-blue-400 text-blue-700 shadow-sm;
