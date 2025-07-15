@@ -60,7 +60,7 @@
                     <tbody class="bg-white divide-y divide-gray-100">
                         @forelse($bookings as $booking)
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">{{ \Carbon\Carbon::parse($booking->date)->format('M d, Y') }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap">{{ \Carbon\Carbon::parse($booking->date)->timezone(config('app.timezone'))->format('M d, Y') }}</td>
                             @if(Auth::user()->is_admin)
                             <td class="px-6 py-4 whitespace-nowrap">{{ $booking->user->name }}</td>
                             @endif
