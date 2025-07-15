@@ -11,7 +11,7 @@
                 <div class="bg-blue-50 border-l-4 border-blue-400 p-3 rounded-r-lg shadow-sm">
                     <div class="text-xs text-gray-500 mb-1">{{ $booking->created_at->diffForHumans() }}</div>
                     <div class="font-medium text-blue-900 text-sm truncate">{{ $booking->user->name }} booked</div>
-                    <div class="text-xs text-blue-700 font-medium">{{ \Carbon\Carbon::parse($booking->date)->format('M d, Y') }}</div>
+                    <div class="text-xs text-blue-700 font-medium">{{ \Carbon\Carbon::createFromFormat('Y-m-d', $booking->date)->format('M d, Y') }}</div>
                     @if($booking->note)
                         <div class="text-xs text-gray-600 mt-1 italic truncate">"{{ Str::limit($booking->note, 50) }}"</div>
                     @endif

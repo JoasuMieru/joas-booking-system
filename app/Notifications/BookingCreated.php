@@ -34,7 +34,7 @@ class BookingCreated extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
-        $date = \Carbon\Carbon::parse($this->booking->date)->timezone(config('app.timezone'))->format('M d, Y');
+        $date = \Carbon\Carbon::createFromFormat('Y-m-d', $this->booking->date)->format('M d, Y');
         return (new MailMessage)
             ->subject('New Booking Created')
             ->line('Your booking has been successfully created!')
@@ -53,7 +53,7 @@ class BookingCreated extends Notification
      */
     public function toArray(object $notifiable): array
     {
-        $date = \Carbon\Carbon::parse($this->booking->date)->timezone(config('app.timezone'))->format('M d, Y');
+        $date = \Carbon\Carbon::createFromFormat('Y-m-d', $this->booking->date)->format('M d, Y');
         return [
             'booking_id' => $this->booking->id,
             'date' => $date,
