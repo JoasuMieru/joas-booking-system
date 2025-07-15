@@ -16,6 +16,19 @@
             <script src="https://cdn.tailwindcss.com"></script>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
             <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+            <style>
+                /* Fix large icons and logos */
+                svg { max-width: 100%; height: auto; }
+                .h-9 { height: 2.25rem !important; }
+                .w-auto { width: auto !important; }
+                /* Ensure proper sizing for all SVG elements */
+                svg[viewBox] { max-width: 100%; height: auto; }
+                /* Fix navigation icons */
+                .h-4 { height: 1rem !important; }
+                .w-4 { width: 1rem !important; }
+                .h-6 { height: 1.5rem !important; }
+                .w-6 { width: 1.5rem !important; }
+            </style>
         @else
             @vite(['resources/css/app.css', 'resources/js/app.js'])
         @endif
